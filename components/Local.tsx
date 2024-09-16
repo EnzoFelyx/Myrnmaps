@@ -1,7 +1,8 @@
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { ChevronRight, Pin } from "lucide-react-native";
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { deletarLocal } from "../services/requests/newLocation";
 
 interface MarkerType {
     cep: string,
@@ -23,10 +24,15 @@ export type RootStackParamList = {
     Home?: { latitude: number; longitude: number };
 };
 
+interface LocalProps extends MarkerType {
+    removerLocal: (id: number) => void;
+}
+
 
 export default function Local({
     latitude,
     longitude,
+    id,
     nome,
     subtitle,
     lograd = "",
@@ -34,7 +40,8 @@ export default function Local({
     city = "",
     state = "",
     country = "",
-}: MarkerType) {
+    removerLocal,
+}: LocalProps) {
 
     const formatAddressComponent = (component: string | undefined) => {
         return component && component.length > 0 ? `${component}, ` : '';
@@ -43,7 +50,7 @@ export default function Local({
     const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
     const aoPressionar = () => {
-        navigation.navigate('Home', { latitude, longitude });  
+        navigation.navigate('Home', { latitude, longitude });
     };
 
     const enderecoCompleto = `${formatAddressComponent(lograd)}${num ? `${num} - ` : ''}${formatAddressComponent(city)}${state ? `${state} - ` : ''}${formatAddressComponent(country)}`;
@@ -52,11 +59,41 @@ export default function Local({
         return texto.length > limite ? texto.slice(0, limite) + "..." : texto;
     };
 
+    const excluir = () => {
+        Alert.alert('Excluir local', 'Desejar excluir essa localização do seu mapa?', [
+            {
+                text: 'cancelar',
+            },
+            {
+                text: 'Deletar',
+                onPress: async () => {
+                    const resultado = await deletarLocal(id);
+                    if (resultado === "sucesso") {
+                        Alert.alert('Local removido com sucesso!');
+                        removerLocal(id);
+                    } else {
+                        Alert.alert('Erro ao remover o local');
+                    }
+                }
+            }
+        ])
+    }
+
+    async function excluirLocal(id: number) {
+        const resultado = await deletarLocal(id);
+        if (resultado === "sucesso") {
+            Alert.alert('Local removido com sucesso!');
+        } else {
+            Alert.alert('produto.warning.removeError');
+        }
+    }
+
 
     return <View style={{ marginHorizontal: 8 }}>
         <TouchableOpacity
             style={{}}
             onPress={aoPressionar}
+            onLongPress={excluir}
         >
             <View style={estilos.container}>
                 <Pin size={30} color={"#52514F"} style={{ marginLeft: 8 }} />

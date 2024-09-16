@@ -1,11 +1,11 @@
 import { NavigationProp, useIsFocused, useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from 'react';
 import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import localImagem from '../../assets/localImagem.png';
 import Local, { RootStackParamList } from '../../components/Local';
 import Topo from '../../components/Topo';
 import { pinList } from '../../services/requests/newLocation';
 import { styles } from "../../styles";
-import localImagem from '../../assets/localImagem.png'
 interface MarkerType {
   cep: string,
   city: string,
@@ -42,6 +42,10 @@ export default function Locations() {
     }
   };
 
+  const removerLocal = (id: number) => {
+    setPinMarkers(prevMarkers => prevMarkers.filter(marker => marker.id !== id));
+  };
+
   useEffect(() => {
     fetchData();
   }, [estaNaTela]);
@@ -51,19 +55,20 @@ export default function Locations() {
   return (
     <View style={{ flex: 1, backgroundColor: "#FFFF" }}>
       <Topo topo='Localizações' />
-      {pinMarkers.length > 0 ? (
+      {pinMarkers.length > 0 ? (<View style={{ marginTop: 24 }}>
         <FlatList
           data={pinMarkers}
-          renderItem={({ item }) => <Local {...item} />}
+          renderItem={({ item }) => <Local {...item} removerLocal={removerLocal} />}
           keyExtractor={({ id }) => String(id)}
           scrollEnabled={true}
           style={{ marginBottom: 60 }}
-        />) :
+        />
+      </View>) :
         <>
           <View style={styles.checkpoints}>
             <Text style={styles.checkpointsLeg}>Parece que ainda você não seus lugares favoritos salvos!</Text>
             <Text style={styles.checkpointsLeg}>Use o mapa para salvar seus checkpoints!</Text>
-            <Image source={localImagem} style={styles.imagem}/>
+            <Image source={localImagem} style={styles.imagem} />
           </View>
           <TouchableOpacity
             style={styles.caixa}

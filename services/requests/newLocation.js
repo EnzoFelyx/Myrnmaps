@@ -16,7 +16,7 @@ export async function newLocation(pin, subtitle, lat, long, num, lograd, neigh, 
             state: state,
             cep: cep,
             country: country
-            
+
         });
         return 'Sucesso';
     } catch (error) {
@@ -33,5 +33,21 @@ export async function pinList() {
     catch (error) {
         console.log(error)
         return []
+    }
+}
+
+export async function deletarLocal(id) {
+    try {
+        const resultado = await api.get(`/location`);
+        const locais = resultado.data;
+        const itemParaDeletar = locais.find(item => item.id === id);
+        if (!itemParaDeletar) {
+            return 'Falha ao excluir local';
+        }
+        await api.delete(`/location/${itemParaDeletar.id}`);
+        return 'sucesso';
+    } catch (error) {
+        console.log(error);
+        return 'erro';
     }
 }

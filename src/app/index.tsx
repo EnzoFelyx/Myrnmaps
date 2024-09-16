@@ -14,7 +14,7 @@ import Topo from '../../components/Topo';
 import { GOOGLE_MAPS_API_KEY } from '../../constants';
 import { newLocation, pinList } from '../../services/requests/newLocation';
 import { styles } from '../../styles';
-import { RouteProp, useRoute } from '@react-navigation/native';
+import { RouteProp, useIsFocused, useRoute } from '@react-navigation/native';
 import { RootStackParamList } from '../../components/Local';
 
 type PlaceDetails = {
@@ -57,6 +57,9 @@ export default function Home() {
   const [subtitle, setSubtitle] = useState("")
 
   const [showModal, setShowModal] = useState(MODAL.NONE)
+
+  const estaNaTela = useIsFocused();
+
 
   const route = useRoute<RoutePropType>();
 
@@ -135,7 +138,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchData();
-  }, [marker]);
+  }, [marker, estaNaTela]);
 
   useEffect(() => {
     requestLocationPermissions();
