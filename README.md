@@ -4,6 +4,7 @@ This is a project dedicated to my studies on how to use mapview in react native 
 
 <div style="display: inline-block">
   <img src="https://github.com/user-attachments/assets/ef5f55bd-1732-47a7-91ab-61e0a306b7d1" width="210" height="450" style="margin-right: 20;" />
+    <img src="https://github.com/user-attachments/assets/ed6769ee-f9f4-4ede-b087-1a6bd76c65a3" width="210" height="450" style="margin-right: 20;" />
   <img src="https://github.com/user-attachments/assets/b92e165c-80e9-4013-8de2-85500b3a5e3c" width="210" height="450" style="margin-right: 20px;" />
   <img src="https://github.com/user-attachments/assets/d28e0279-a797-4f49-93ad-8dd8bc56999d" width="210" height="450" style="margin-right: 20px;" />
   <img src="https://github.com/user-attachments/assets/efd8252d-eb60-49cb-98f5-36aaf0becede" width="210" height="450" style="margin-right: 20px;" />
@@ -93,6 +94,7 @@ Este é um projeto dedicado aos meus estudos em como usar o MapView no react-nat
 
 <div style="display: inline-block">
   <img src="https://github.com/user-attachments/assets/ef5f55bd-1732-47a7-91ab-61e0a306b7d1" width="210" height="450" style="margin-right: 20;" />
+  <img src="https://github.com/user-attachments/assets/ed6769ee-f9f4-4ede-b087-1a6bd76c65a3" width="210" height="450" style="margin-right: 20;" />
   <img src="https://github.com/user-attachments/assets/b92e165c-80e9-4013-8de2-85500b3a5e3c" width="210" height="450" style="margin-right: 20px;" />
   <img src="https://github.com/user-attachments/assets/d28e0279-a797-4f49-93ad-8dd8bc56999d" width="210" height="450" style="margin-right: 20px;" />
   <img src="https://github.com/user-attachments/assets/efd8252d-eb60-49cb-98f5-36aaf0becede" width="210" height="450" style="margin-right: 20px;" />
