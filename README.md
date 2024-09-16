@@ -14,7 +14,7 @@ This is a project dedicated to my studies on how to use mapview in react native 
 </div>
 
 ## Check out
-* **Link to the App demostration** - [Video](https://vimeo.com)
+* **Link to the App demostration** - [Video](https://vimeo.com/1009948161?share=copy)
 
 ## 📖 Prelude
 
@@ -103,7 +103,7 @@ Este é um projeto dedicado aos meus estudos em como usar o MapView no react-nat
 </div>
 
 ## Dê uma olhada
-* **Link mostrando o App** - [Video](https://vimeo.com)
+* **Link mostrando o App** - [Video](https://vimeo.com/1009948161?share=copy)
 
 ## 📖 Introdução
 
