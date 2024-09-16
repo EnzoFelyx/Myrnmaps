@@ -225,8 +225,8 @@ export default function Home() {
       }
 
       <Modal
-        title="Confirir dados"
-        subtitle="Antes de salvar o destino"
+        title="Dê um nome ao destino"
+        subtitle="Confira os dados antes de salvar"
         visible={showModal === MODAL.UPDATE_TRIP}
         onClose={() => setShowModal(MODAL.NONE)}
       >
