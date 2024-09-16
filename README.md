@@ -37,7 +37,7 @@ After downloading the project, make sure to install the project libraries and al
 npm install
 ```
 
-For this project, you'll need to install a mock API. I chose to use `json-server` to simulate an online API. If you want to run this project on your device without relying on localhost, you'll need to use a web-based API instead.
+For this project, you'll need to install a mock API. I chose to use `json-server` to simulate an online API. If you want to run this project on your device without relying on localhost, you'll need to use a web-based API instead. (If you use json-serve, don't forget to make a db.json file)
 
 ```
 npm install json-server
@@ -79,7 +79,6 @@ What else was used within the project:
 * [Android Studio](https://developer.android.com/studio/install)
 * [Github](https://github.com/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* 
 
 **APIs:**
 * [react-native-google-places-autocomplete](https://www.npmjs.com/package/react-native-google-places-autocomplete)
@@ -127,7 +126,7 @@ Após baixar o projeto em sua máquina, certifique-se de instalar as bibliotecas
 npm install
 ```
 
-Para esse projeto, você precisará instalar um mock API. Eu optei pelo `json-server` afim de simular uma API de consumo online de dados. Se você desejar usar esse projeto no seu celular sem depender de um hosting local, você precisará alterar o serviços de consumos e utilizar uma web API.
+Para esse projeto, você precisará instalar um mock API. Eu optei pelo `json-server` afim de simular uma API de consumo online de dados. Se você desejar usar esse projeto no seu celular sem depender de um hosting local, você precisará alterar o serviços de consumos e utilizar uma web API. (Se for usar o json-serve, não esquece de criar um arquivo db.json no seu projeto)
 
 ```
 npm install json-server
@@ -169,7 +168,6 @@ O que mais foi utilizado dentro do projeto:
 * [Android Studio](https://developer.android.com/studio/install)
 * [Github](https://github.com/)
 * [Visual Studio Code](https://code.visualstudio.com/)
-* 
 
 **APIs:**
 * [react-native-google-places-autocomplete](https://www.npmjs.com/package/react-native-google-places-autocomplete)
